@@ -9,8 +9,10 @@ class PriorityQueue:
 
 
 def enqueue(pq: PriorityQueue, value: int) -> PriorityQueue:
-    pass
+    new_heap = insert(pq.heap, value)
+    return PriorityQueue(heap=new_heap)
 
 
 def dequeue(pq: PriorityQueue) -> tuple[int, PriorityQueue]:
-    pass
+    min_value, new_heap = extract(pq.heap)
+    return min_value, PriorityQueue(heap=new_heap)
